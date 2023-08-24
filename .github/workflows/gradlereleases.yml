@@ -39,7 +39,7 @@
             path: app/build/libs/*.jar
         - name: Bump version and push tag
           id: tag_version
-          uses: mathieudutour/github-tag-action@v6.1
+          uses: DrShadowPLay/github-tag-action@master
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}   
             release_branches: "feature.*"
