@@ -38,8 +38,8 @@
               secret: ${{ secrets.ACTIONS_TOKEN }}
               approvers: DrShadowPLay
               minimum-approvals: 1
-              issue-title: "Aprove For Prodj"
-              issue-body: "Please approve or deny the deployment of the relaese version to the TestSys environment."
+              issue-title: "Aprove of ${{ github.head_ref || github.ref_name }} on Prod environment"
+              issue-body: "Please approve or deny the deployment of the relaese version to the Prod environment."
               exclude-workflow-initiator-as-approver: false
               additional-approved-words: ''
               additional-denied-words: '' 
