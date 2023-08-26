@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="bigproject.app.MessageUtilsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-26T15:01:52" hostname="DESKTOP-6T5IG1K" time="0.023">
+<testsuite name="bigproject.app.MessageUtilsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-08-26T16:11:59" hostname="shadow-blade" time="0.028">
   <properties/>
-  <testcase name="testGetMessage()" classname="bigproject.app.MessageUtilsTest" time="0.02"/>
-  <testcase name="testGetAge()" classname="bigproject.app.MessageUtilsTest" time="0.002"/>
-  <system-out><![CDATA[Enter your Age:
+  <testcase name="testGetName()" classname="bigproject.app.MessageUtilsTest" time="0.021"/>
+  <testcase name="testGetMessage()" classname="bigproject.app.MessageUtilsTest" time="0.001"/>
+  <testcase name="testGetAge()" classname="bigproject.app.MessageUtilsTest" time="0.003"/>
+  <system-out><![CDATA[Enter your Name:
 Enter your Age:
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
