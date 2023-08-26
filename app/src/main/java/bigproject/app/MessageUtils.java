@@ -18,6 +18,11 @@ class MessageUtils {
         return age; 
     }
 
+    public static Integer addNumberToAge(int number) {   
+        return getAge() + number; 
+    }
+
+
     public static String getName() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Name:");
