@@ -21,6 +21,16 @@ class MessageUtilsTest {
         assertEquals(21, MessageUtils.getAge());
     }
 
+    @Test void tesAddNumberToAge() {
+        //Prepare input for age function
+        InputStream stdin = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("21".getBytes());
+        System.setIn(in);
+
+
+        assertEquals(21 + 3, MessageUtils.addNumberToAge(3));
+    }
+
     @Test void testGetName() {
         InputStream stdin = System.in;
         ByteArrayInputStream in = new ByteArrayInputStream("Peter".getBytes());
