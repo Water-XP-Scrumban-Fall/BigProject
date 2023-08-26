@@ -11,6 +11,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 class MessageUtilsTest {
     @Test void testGetAge() {
@@ -20,10 +21,14 @@ class MessageUtilsTest {
         assertEquals(21, MessageUtils.getAge());
     }
 
-    @Test void testGetMessage() {
+    @Test void testGetName() {
         InputStream stdin = System.in;
-        ByteArrayInputStream in = new ByteArrayInputStream("21".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("Peter".getBytes());
         System.setIn(in);
-        assertEquals("Hello Peter: You are 21 years old", MessageUtils.getMessage());
+        assertEquals("Peter", MessageUtils.getName());
+    }
+
+    @Test void testGetMessage() {
+        assertEquals("Hello: Peter You are 21 years old", MessageUtils.getMessage());
     }
 }
