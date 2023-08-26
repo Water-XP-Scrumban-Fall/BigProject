@@ -16,6 +16,6 @@ class MessageUtils {
         System.out.println("Enter your Age:");
         int age = scanner.nextInt();
         scanner.close();
-        return age;
+        return age; 
     }
 }
