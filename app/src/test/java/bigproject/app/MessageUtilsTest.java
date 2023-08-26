@@ -7,8 +7,23 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
 class MessageUtilsTest {
+    @Test void testGetAge() {
+        InputStream stdin = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("21".getBytes());
+        System.setIn(in);
+        assertEquals(21, MessageUtils.getAge());
+    }
+
     @Test void testGetMessage() {
-        assertEquals("Hello      World!", MessageUtils.getMessage());
+        InputStream stdin = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("21".getBytes());
+        System.setIn(in);
+        assertEquals("Hello Peter: You are 21 years old", MessageUtils.getMessage());
     }
 }
