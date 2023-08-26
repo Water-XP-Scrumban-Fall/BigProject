@@ -29,6 +29,6 @@ class MessageUtilsTest {
     }
 
     @Test void testGetMessage() {
-        assertEquals("Hello: Peter You are 21 years old", MessageUtils.getMessage());
+        assertEquals("Hello world!", MessageUtils.getMessage());
     }
 }

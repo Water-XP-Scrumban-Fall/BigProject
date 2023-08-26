@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 class MessageUtils {
     public static String getMessage() {
-        return "Hello: Peter You are 21 years old";
+        return "Hello world!";
     }
 
     public static Integer getAge() {
