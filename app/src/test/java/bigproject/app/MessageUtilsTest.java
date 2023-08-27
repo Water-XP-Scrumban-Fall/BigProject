@@ -26,4 +26,4 @@ class MessageUtilsTest {
         System.setIn(in);
         assertEquals("Hello Peter: You are 21 years old", MessageUtils.getMessage());
     }
-}
+} 
