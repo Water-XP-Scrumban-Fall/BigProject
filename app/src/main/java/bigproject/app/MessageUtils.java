@@ -9,7 +9,7 @@ class MessageUtils {
     public static String getMessage() {
         return "Hello world!";
     }
-
+    
     public static Integer getAge() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Age:");
