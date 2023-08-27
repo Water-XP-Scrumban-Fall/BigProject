@@ -36,7 +36,7 @@ class MessageUtilsTest {
         ByteArrayInputStream in = new ByteArrayInputStream("Peter".getBytes());
         System.setIn(in);
         assertEquals("Peter", MessageUtils.getName());
-    }
+    } 
 
     @Test void testGetMessage() {
         assertEquals("Hello world!", MessageUtils.getMessage());
