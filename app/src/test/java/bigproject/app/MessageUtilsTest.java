@@ -41,4 +41,4 @@ class MessageUtilsTest {
     @Test void testGetMessage() {
         assertEquals("Hello world!", MessageUtils.getMessage());
     }
-}
+} 
