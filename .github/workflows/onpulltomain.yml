@@ -50,5 +50,5 @@
         needs:  [build, A-Aproval]
         steps:
           - run: |
-              echo System wird auf Prod deployed ... 
-              echo System wurde erfolgreich deployed    
+              echo Programm wird auf Prod deployed ... 
+              echo Programm wurde erfolgreich deployed    
