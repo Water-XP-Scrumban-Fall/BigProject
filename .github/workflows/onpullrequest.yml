@@ -44,14 +44,14 @@
               additional-approved-words: ''
               additional-denied-words: ''      
 
-      Delpoy-on-Systest:
-        name: Deploy on Systest
+      Delpoy-on-TestSystem:
+        name: Deploy on TestSystem
         runs-on: ubuntu-latest
         needs: [Generall-Aproval , Build]
         steps:
           - run: |
-              echo System wird auf Systest deployed ... 
-              echo System wurde erfolgreich deployed    
+              echo Programm wird auf TestSystem deployed ... 
+              echo Programm wurde erfolgreich deployed    
               echo Creating Branch
           - uses: peterjgrainger/action-create-branch@v2.0.1
             env:
@@ -59,22 +59,22 @@
             with:
               branch: 'Test-Systest_${{ github.head_ref || github.ref_name }}'
 
-      Systest-approval:
+      TestSystem-approval:
      #    This job only runs for pull request comments
-        name: Systest Aproval
+        name: TestSystem Aproval
         runs-on: ubuntu-latest
-        needs: [Delpoy-on-Systest, Generall-Aproval]
+        needs: [Delpoy-on-TestSystem, Generall-Aproval]
         steps:
           - run: |
               echo A comment on PR 
-          - name: Aproval for Systest
+          - name: Aproval for Testsystem
             uses: trstringer/manual-approval@v1
             with:
               secret: ${{ github.TOKEN }}
               approvers: DrShadowPLay
               minimum-approvals: 1
-              issue-title: "Aprove of the functionallity ${{ github.head_ref || github.ref_name }} on TestSys environment"
-              issue-body: "Please approve or deny the funcionality of the release version on the TestSys environmen"
+              issue-title: "Aprove of the functionallity ${{ github.head_ref || github.ref_name }} on Test environment"
+              issue-body: "Please approve or deny the funcionality of the release version on the Test environmen"
               exclude-workflow-initiator-as-approver: false
               additional-approved-words: ''
               additional-denied-words: '' 
@@ -84,36 +84,36 @@
               github_token: ${{github.token}}
               branches: Test-Systest_
               suffix: ${{ github.head_ref || github.ref_name }}
-      Delpoy-on-Test:
-        name: Deploy on Test
+      Delpoy-on-SysTest:
+        name: Deploy on SysTest
         runs-on: ubuntu-latest
-        needs: Systest-approval
+        needs: TestSystem-approval
         steps:
           - run: |
-              echo System wird auf Test deployed ...
-              echo System wurde erfolgreich deployed    
+              echo Programm wird auf SysTest deployed ...
+              echo Programm wurde erfolgreich deployed    
               echo Creating Branch
           - uses: peterjgrainger/action-create-branch@v2.0.1
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             with:
-              branch: 'Test_${{ github.head_ref || github.ref_name }}'
+              branch: 'SysTest_${{ github.head_ref || github.ref_name }}'
               
-      Test-aproval:
-        name: Test-Aproval
+      SysTest-aproval:
+        name: SysTest-Aproval
         runs-on: ubuntu-latest
-        needs: Delpoy-on-Test
+        needs: Delpoy-on-SysTest
         steps:
           - run: |
               echo A comment on PR 
-          - name: Aproval for Test environment 
+          - name: Aproval for SysTest environment 
             uses: trstringer/manual-approval@v1
             with:
               secret: ${{ github.TOKEN }}
               approvers: DrShadowPLay
               minimum-approvals: 1
-              issue-title: "Aprove of the funcionality ${{ github.head_ref || github.ref_name }} on TestSys"
-              issue-body: "Please approve or deny the funcionality of the release version on the TestSys environme"
+              issue-title: "Aprove of the funcionality ${{ github.head_ref || github.ref_name }} on SysTest"
+              issue-body: "Please approve or deny the funcionality of the release version on the SysTest environme"
               exclude-workflow-initiator-as-approver: false
               additional-approved-words: ''
               additional-denied-words: ''            
@@ -121,5 +121,5 @@
             uses: dawidd6/action-delete-branch@v3.1.0
             with:
               github_token: ${{github.token}}
-              branches: Test_
+              branches: SysTest_
               suffix: ${{ github.head_ref || github.ref_name }}  
