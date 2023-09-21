@@ -19,3 +19,4 @@ public class App {
         System.out.println(WordUtils.capitalize(result));
     }
 }
+// Hier wurden Ganz tolle Sachen gemacht
