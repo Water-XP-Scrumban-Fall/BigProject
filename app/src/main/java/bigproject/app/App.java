@@ -19,4 +19,4 @@ public class App {
         System.out.println(WordUtils.capitalize(result));
     }
 }
-// sinvolles Kommentar
+// ein fertiges Tolles feature
