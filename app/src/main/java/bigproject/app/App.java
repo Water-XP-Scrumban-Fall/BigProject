@@ -19,4 +19,4 @@ public class App {
         System.out.println(WordUtils.capitalize(result));
     }
 }
-// ein Tolles feature
+// ein fertiges Tolles feature
