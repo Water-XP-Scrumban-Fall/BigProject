@@ -19,5 +19,4 @@ public class App {
         System.out.println(WordUtils.capitalize(result));
     }
 }
-// Hier wurden Ganz tolle Sachen gemacht
-// Und andere Sachen wurden gemacht die ganz Sinfoll sind
+// Test
